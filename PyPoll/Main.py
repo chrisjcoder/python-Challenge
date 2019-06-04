@@ -72,22 +72,7 @@ for nominee, votes in candidates.items():
     f.write(f"{nominee}: {cand_votes[nominee]} ({votes})"+cg)
 f.write(linebreak+cg)
 f.write(f"Winner: {winner}"+cg)
-f.write(linebreak)
+f.write(linebreak) e
 f.close
     
 
-
-    
-    
-#       profit= max(min_max, key=lambda row: int(row[1]))
-#    loss= min(min_max, key=lambda row: int(row[1])),
-#        
-#The total number of votes cast
-#
-#A complete list of candidates who received votes
-#
-#The percentage of votes each candidate won
-#
-#The total number of votes each candidate won
-#
-#The winner of the election based on popular vote.

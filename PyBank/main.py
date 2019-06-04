@@ -29,20 +29,13 @@ with open(budget_csv,newline="") as csvBudget:
 
     for i in range(1,len(net)):
         dev.append(net[i]-net[i-1])#** add to list all profit/loss changes by each day
-        
-#    print(sum(dev)/tot)
-#    x=(sum(dev))/tot
+
 # use this to convert average change to a currency format with 2 decimals  
     cents = Decimal('0.01')
     avgChg=Decimal(sum(dev)/(tot-1)).quantize(cents, ROUND_HALF_UP)
     
 
-    
-   # print(round(decimal(sum(dev))/(tot),2))#**average change of profit/loss
-#    print(int(tot))#total number of months
-#    print(sum(net))# sum of profit/loss 
-#    
-#
+
     # now it's in memory, so we can reuse it
     #get entire row of min and max values profit/loss and the date
     profit= max(min_max, key=lambda row: int(row[1]))
@@ -77,35 +70,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-
-# Here are all your options for rounding:
-# This one offers the most out of the box control
-# ROUND_05UP       ROUND_DOWN       ROUND_HALF_DOWN  ROUND_HALF_UP
-# ROUND_CEILING    ROUND_FLOOR      ROUND_HALF_EVEN  ROUND_UP
-
-#our_value = decimal.("-2288.1976744186045")
-#output = Decimal(our_value.quantize(Decimal('.01'), rounding=ROUND_HALF_UP))
-#
-#print(output)
-
-
-
-
-#In addition, your final script should both print the analysis to the terminal and export a text file with the results.
-#    
-#    # Specify the file to write to
-#output_path =open("FinancialAnalysis.txt","w+")
-# #os.path.join("..", "output", "FinacialAnalysis.txt")
-#
-## Open the file using "write" mode. Specify the variable to hold the contents
-#with open(output_path, 'w') as results:
-#
-#    # Initialize csv.writer
-#    csvwriter = csv.writer(results)
-#
-#    # Write the first row (column headers)
-#    csvwriter.writerow("hello" + profit[0])
-#
-#    # Write the second row
-#    csvwriter.writerow("goodbye" + loss[0])
